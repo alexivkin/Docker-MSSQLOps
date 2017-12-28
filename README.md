@@ -2,7 +2,7 @@
 
 Linux version of the SQL Ops studio (preview) from [here](https://docs.microsoft.com/en-us/sql/sql-operations-studio) installed in a Ubuntu based container (phusion/baseimage) from [here](https://github.com/phusion/baseimage-docker).
 
-Run with the `run` command from the [github repo]( or
+Run with the `run` command from the [github repo](https://github.com/alexivkin/Docker-MSSQLOps) or
 
 ```
 xhost +local:$(docker inspect --format='{{ .Config.Hostname }}' alexivkin/mssqlops)
