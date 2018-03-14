@@ -6,9 +6,5 @@ if [[ -z "$(xhost|grep LOCAL)" ]]; then
 	xhost +local:$(docker inspect --format='{{ .Config.Hostname }}' $cid)
 fi
 
-# if there are options specified then run container in an interactive shell, otherwise not
-if [[ $# > 0 ]]; then
-	docker run --rm --net=host -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro $cid $*
-else
-	docker run --rm --net=host -d -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro $cid
-fi
+# $* to pass on any options from the command line
+docker run --rm --net=host -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro $cid $*

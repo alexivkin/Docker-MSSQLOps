@@ -1,6 +1,6 @@
-FROM phusion/baseimage
+FROM ubuntu:latest
 
-LABEL description="Microsoft SQL Operations Studio (preview)"
+LABEL description="Microsoft SQL Operations Studio (MSSQL Ops preview)"
 LABEL maintainer="Alex Ivkin"
 LABEL version="1.0"
 
